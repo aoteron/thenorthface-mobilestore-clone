@@ -1,4 +1,6 @@
 // import { useState } from 'react'
+
+import { User } from './pages/login'
 import './App.css'
 
 function App() {
@@ -6,7 +8,10 @@ function App() {
 
   return (
     <>
-      Hello again
+      <h1>React + TypeScript Ecommerce</h1>
+      <hr/>
+
+      <User />
     </>
   )
 }
