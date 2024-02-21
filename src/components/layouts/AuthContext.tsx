@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useState } from 'react';
+import { ReactNode, createContext, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 interface IAuthContextProps {
@@ -19,7 +19,7 @@ interface User {
   wishlist: number[];
 }
 
-const AuthContext = createContext({} as AuthContextType);
+export const AuthContext = createContext({} as AuthContextType); // Export AuthContext to be able to import it in other files
 
 export function AuthContextProvider(props: IAuthContextProps) {
   const [user, setUser] = useState<User | null>(null);
@@ -29,14 +29,4 @@ export function AuthContextProvider(props: IAuthContextProps) {
       {props.children ? props.children : <Outlet />}
     </AuthContext.Provider>
   );
-}
-
-export function useAuthContext() {
-  const context = useContext(AuthContext);
-
-  if (!context) {
-    throw new Error('useAuthContext must be used within a DataContextProvider');
-  }
-
-  return context;
 }
