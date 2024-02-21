@@ -12,13 +12,7 @@ interface Users {
 
 export const User = () => {
 
-    const [user, setUser] = useState<Users>(); 
-
-    // const login = () = {
-    //     setUser({
-            
-    //     });
-    // }
+    const [user, setUser] = useState<Users>();
 
   return (
     <div>

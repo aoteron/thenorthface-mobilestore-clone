@@ -25,7 +25,7 @@ export function setErrorInput(input: Element) {
   }
   
   // Resets multiple HTML input elements to their default state.
-  export function resetForm(inputs: HTMLInputElement[]) { // --- CAMBIADO DE ELEMENT A HTMLINPUTELEMENT --- //
+  export function resetForm(inputs: HTMLInputElement[]) { // ! changed from'Element' to HTMLIpuntElement
     inputs.forEach((input) => {
       input.value = '';
       resetInput(input);
