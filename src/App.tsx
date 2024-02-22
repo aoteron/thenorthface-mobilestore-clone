@@ -1,19 +1,19 @@
-// import { useState } from 'react'
+// App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importa 'Routes' en lugar de 'Switch'
+import Login from './pages/login/Login';
+import LoginForm from './pages/login/components/LoginForm';
 
-import { User } from './pages/login'
-import './App.css'
-
-function App() {
-  // const [count, setCount] = useState(0)
-
+const App: React.FC = () => {
   return (
-    <>
-      <h1>React + TypeScript Ecommerce</h1>
-      <hr/>
+    <Router>
+      <Routes> {/* Utiliza 'Routes' en lugar de 'Switch' */}
+        <Route path="/login" element={<Login />} /> {/* Utiliza 'element' en lugar de 'component' */}
+        {/* Ruta por defecto */}
+        <Route path="/" element={<LoginForm onSubmit={() => {}} />} /> {/* Utiliza 'element' en lugar de 'component' */}
+      </Routes> {/* Utiliza 'Routes' en lugar de 'Switch' */}
+    </Router>
+  );
+};
 
-      <User />
-    </>
-  )
-}
-
-export default App
+export default App;

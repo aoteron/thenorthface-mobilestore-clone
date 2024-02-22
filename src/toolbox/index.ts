@@ -1,7 +1,7 @@
 /* Here we have a file containing a collection of utility functions crucial for our app.
-*These functions enhance code cleanliness and organization, without directly impacting the core business logic.
-*For instance, we might include date formatting, currency conversion, and object data extraction.
-*By leveraging these utilities, we streamline our codebase, ensuring clarity and maintainability. */
+These functions enhance code cleanliness and organization, without directly impacting the core business logic.
+For instance, we might include date formatting, currency conversion, and object data extraction.
+By leveraging these utilities, we streamline our codebase, ensuring clarity and maintainability. */
 
 // Sets an 'error' state on an HTML input element.
 export function setErrorInput(input: Element) {
