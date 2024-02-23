@@ -10,7 +10,7 @@ export function Header({}: HeaderProps) {
 
     return (
         <div>
-          <h5>Hello</h5> {/* Muestra el nombre del usuario */}
+          <h5>Header</h5> {/* Muestra el nombre del usuario */}
         </div>
       );
     }

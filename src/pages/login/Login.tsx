@@ -1,5 +1,6 @@
 // Login.tsx
 import LoginForm from '../login/components/LoginForm'
+import Header from '../../components/header/Header.tsx'
 
 const Login: React.FC = () => {
   // Función para manejar el envío del formulario
@@ -10,7 +11,9 @@ const Login: React.FC = () => {
 
   return (
     <div>
-      {/* Renderiza el formulario de inicio de sesión y pasa la función handleSubmit como prop */}
+    <section>
+      <Header />
+    </section>
       <LoginForm onSubmit={handleSubmit} />
     </div>
   );
