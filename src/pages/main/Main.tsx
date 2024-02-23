@@ -1,6 +1,7 @@
 // pages/main/Main.tsx
 import Header from '../../components/header/Header';
 import { products } from '../../data/productsData';
+import { Link } from 'react-router-dom';
 
 const Main: React.FC = () => {
   
@@ -16,10 +17,12 @@ const Main: React.FC = () => {
           return (
             <div key={product.id}>
               <img src={firstVariation.image}
-              alt={`Imagen de la categoría ${product.use} para ${product.gender}`}
+              alt={`Imagen de la categoría ${product.category}`}
               style={{ width: '25%' }} // ! previsualización
               />
-              <h3>{product.use} para {product.gender}</h3>
+              <Link to={`/product/${product.id}`} key={product.id}>
+              <h3>{product.category}</h3>
+              </Link>
             </div>
           );
         })}

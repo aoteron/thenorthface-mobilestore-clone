@@ -2,8 +2,8 @@
 export interface Product {
   id: string;
   name: string;
-  use: string;
-  gender: "Hombre" | "Mujer";
+  category: string;
+  gender: "Hombre" | "Mujer" | "Unisex";
   idealUse: string;
   advantages: {
     [key: string]: boolean;
@@ -21,8 +21,28 @@ export interface ProductVariation {
 export const products: Product[] = [
   {
     id: "1",
+    name: "Chaqueta 3 en 1 Evolve II Triclimate® para hombre",
+    category: "Senderismo para hombre",
+    gender: "Hombre",
+    idealUse: "Chaqueta versátil para climas fríos, compuesta por dos capas que pueden usarse juntas o por separado, proporcionando protección contra el viento, la lluvia y el frío.",
+    advantages: {
+      Versatilidad: true,
+      "Protección contra los elementos": true,
+      "Capas intercambiables": true,
+    },
+    variations: [
+      {
+        id: "1",
+        color: "Forest Olive-TNF Black",
+        prize: 115.00,
+        image: "https://images.thenorthface.com/is/image/TheNorthFaceEU/CG55_RMO_hero"
+      }
+    ]
+  },
+  {
+    id: "2",
     name: "Chaqueta con aislamiento térmico sintético Huila para mujer",
-    use: "Senderismo",
+    category: "Senderismo para mujer",
     gender: "Mujer",
     idealUse: "Calidez al instante al hacer senderismo en días fríos y miserables",
     advantages: {
@@ -55,5 +75,48 @@ export const products: Product[] = [
         image: "/src/assets/products/85AG_OWU_hero.jpeg"
       }
     ]
-  }
+  },
+  {
+    id: "3",
+    name: "Zapatillas alpinas GORE-TEX® Verto para hombre",
+    category: "Alpinismo",
+    gender: "Hombre",
+    idealUse: "Zapatillas diseñadas para alpinismo y actividades de montaña, ofreciendo protección impermeable y transpirable gracias a la tecnología GORE-TEX®.",
+    advantages: {
+      "Protección impermeable": true,
+      "Transpirabilidad": true,
+      "Agarre en terrenos alpinos": true
+    },
+    variations: [
+      {
+        id: "1",
+        color: "Negro",
+        prize: 170.00,
+        image: "https://images.thenorthface.com/is/image/TheNorthFaceEU/83ND_MN8_hero"
+      }
+    ]
+  },
+  {
+    id: "4",
+    name: "Mochila Borealis",
+    category: "Mochilas",
+    gender: "Unisex",
+    idealUse: "Mochila versátil diseñada para el uso diario, viajes y actividades al aire libre, con compartimentos organizativos y panel trasero acolchado para mayor comodidad.",
+    advantages: {
+      "Versatilidad": true,
+      "Comodidad": true,
+      "Organización": true
+    },
+    variations: [
+      {
+        id: "1",
+        color: "Negro",
+        prize: 125.00,
+        image: "https://images.thenorthface.com/is/image/TheNorthFaceEU/52SE_R81_hero"
+      }
+    ]
+  },
+  
+  
+  
 ];
