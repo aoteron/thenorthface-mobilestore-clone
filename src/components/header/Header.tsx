@@ -1,18 +1,21 @@
 // Header.tsx
-//import { useUsersContext } from "../../context/userctxt";
+import { Link } from "react-router-dom";
 
 type HeaderProps = NonNullable<unknown>;
   // Define las propiedades que puedas necesitar, aunque en este caso no necesitamos ninguna
 
 // eslint-disable-next-line no-empty-pattern
 export function Header({}: HeaderProps) {
-    //const userctxt = useUsersContext(); // Utiliza el hook useUsersContext para obtener los datos del usuario
+  return (
+    <div>
+      <h5>Header</h5> {/* Muestra el nombre del usuario */}
 
-    return (
-        <div>
-          <h5>Header</h5> {/* Muestra el nombre del usuario */}
-        </div>
-      );
-    }
-    
+      {/* Añade un enlace al carrito */}
+      <Link to="/cart">
+        <button>Ir al carrito</button>
+      </Link>
+    </div>
+  );
+}
+
 export default Header;

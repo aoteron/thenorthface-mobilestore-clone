@@ -1,7 +1,7 @@
-// pages/product/Product.tsx
 import Header from '../../components/header/Header';
 import { useParams } from 'react-router-dom';
 import { products, Product } from '../../data/productsData';
+import { useCartContext } from '../../components/contexts/CartContext';
 
 const ProductDetails: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -28,8 +28,21 @@ const ProductDetails: React.FC = () => {
         <p>Color: {firstVariation.color}</p>
         <p>Precio: {firstVariation.prize} EUR</p>
       </div>
+      <AddToCartButton product={product} />
     </div>
   );
 }
 
 export default ProductDetails;
+
+const AddToCartButton: React.FC<{ product: Product }> = ({ product }) => {
+  const { addToCart } = useCartContext();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
+
+  return (
+    <button onClick={handleAddToCart}>Añade al carrito</button>
+  );
+};

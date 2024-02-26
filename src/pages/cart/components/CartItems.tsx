@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useUsersContext } from "../../../components/contexts/UserContext";
-import { usePaintingsContext } from "../../../components/contexts/PaintingContextProvider";
+import { useCartContext } from "../../../components/contexts/CartContext";
 import CartItemInfo from "./CartItemsInfo";
 
 type ProductCount = {
@@ -9,22 +9,20 @@ type ProductCount = {
 
 export function CartItems() {
   const { user } = useUsersContext();
-  const { paintings } = usePaintingsContext();
+  const { cartItems } = useCartContext();
   const [totalPrize, setTotalPrize] = useState(0);
 
-  // Function to calculate total price at Cart
   const calculateTotalPrize = () => {
     let prize: number = 0;
-    user.cart.forEach((item) => {
-      const product = paintings.find((painting) => painting.id === item.id);
+    cartItems.forEach((item) => {
+      const product = user.cart.find((cartItem) => cartItem.id === item.id);
       if (product) {
-        prize += product.variations[0].prize;
+        prize += item.variations[0].prize;
       }
     });
     setTotalPrize(prize);
   };
 
-  // Function to add quantity and not repeat the product
   const productCount: ProductCount = {};
   user.cart.forEach((item) => {
     const productId: string = item.id;
@@ -35,7 +33,7 @@ export function CartItems() {
 
   useEffect(() => {
     calculateTotalPrize();
-  }, [user.cart, paintings]);
+  }, [user.cart, cartItems]);
 
   return (
     <>
@@ -43,7 +41,7 @@ export function CartItems() {
         <h3>The cart is empty! 😢</h3>
       )}
       {Object.entries(productCount).map(([productId, count]) => {
-        const product = paintings.find((painting) => painting.id === productId);
+        const product = cartItems.find((cartItem) => cartItem.id === productId);
         return (
           <div key={productId}>
             <CartItemInfo
