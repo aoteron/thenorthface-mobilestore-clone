@@ -1,0 +1,29 @@
+[
+    {
+      "id": "1",
+      "name": "Anna",
+      "username": "anna",
+      "password": "pass123",
+      "cart": [],
+      "wishlist": [],
+      "mail": "anna@example.com"
+    },
+    {
+      "id": "2",
+      "name": "Brian",
+      "username": "brian",
+      "password": "pass456",
+      "cart": [],
+      "wishlist": [],
+      "mail": "brian@example.com"
+    },
+    {
+      "id": "3",
+      "name": "Catherine",
+      "username": "catherine",
+      "password": "pass789",
+      "cart": [],
+      "wishlist": [],
+      "mail": "catherine@example.com"
+    }
+]
