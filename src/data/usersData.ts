@@ -1,4 +1,16 @@
-[
+import { Product } from "./productsData";
+
+export interface User {
+  name: string,
+  username: string;
+  mail: string;
+  password: string;
+  cart: Product [];
+  wishlist: Product [];
+}
+
+
+const users = [
     {
       "id": "1",
       "Name": "Anna",
@@ -25,3 +37,4 @@
     }
   ]
   
+  export default users
