@@ -1,5 +1,5 @@
 // App.tsx
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './pages/login/Login';
 import Main from './pages/main/Main'
 import Product from './pages/product/Product';
@@ -27,8 +27,9 @@ function App () {
         <Route path='/product' element={<Product />} />
         <Route path="/product/:productId" element={<ProductDetails />} /> {/* Ruta para ProductDetails con un parámetro de ruta */}
         <Route path='/cart' element={<Cart />} />
+        <Route path='*' element={<Navigate to ='/'/>} />
         
-      </Routes> 
+      </Routes>
     </div>
   );
 }
