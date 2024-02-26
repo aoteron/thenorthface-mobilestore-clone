@@ -4,11 +4,11 @@ import Main from '../../pages/main/Main';
 import Product from '../../pages/product/Product';
 import ProductDetails from "../../pages/product/Product";
 import Cart from "../../pages/cart/Cart";
-import ProtectedRoute from "./ProtectedRoutes";
+// import ProtectedRoute from "./ProtectedRoutes";
 import { AuthProvider } from "../contexts/AuthContext";
 
 const AppRoutes = () => {
-    return (
+    return (    
         <AuthProvider>
             <BrowserRouter>
                 <Routes>
@@ -16,13 +16,13 @@ const AppRoutes = () => {
                     path="/" element={<Login />}
                     />
                     <Route
-                    path="/main" element={<ProtectedRoute component={Main} />}
+                    path="/main" element={<Main />}
                     />
                     <Route
-                    path="/product" element={<ProtectedRoute component={Product}/>}
+                    path="/product" element={<Product />}
                     />
                     <Route 
-                    path="/product/:productId" element={<ProtectedRoute component={ProductDetails} />}
+                    path="/product/:productId" element={<ProductDetails />}
                     />
                     <Route
                     path="/cart"

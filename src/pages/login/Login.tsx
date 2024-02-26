@@ -4,7 +4,8 @@ import { useAuthDispatch } from '../../components/contexts/AuthContext.tsx';
 import { useNavigate } from 'react-router-dom';
 import { User } from '../../data/usersData.ts';
 import { useUsersContext } from '../../components/contexts/UserContext.tsx';
-import Header from '../../components/header/Header.tsx'
+// import Header from '../../components/header/Header.tsx'
+import FakeHeader from '../../components/header/FakeHeader.tsx';
 
 async function getUserData() {
   try {
@@ -68,7 +69,7 @@ async function getUserData() {
   return (
     <>
     <section>
-      <Header />
+      <FakeHeader />
     </section>
 
     <section>

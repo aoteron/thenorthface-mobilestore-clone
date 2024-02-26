@@ -1,4 +1,5 @@
 // pages/main/Main.tsx
+import FakeHeader from '../../components/header/FakeHeader';
 import Header from '../../components/header/Header';
 import { products } from '../../data/productsData';
 import { Link } from 'react-router-dom';
@@ -7,6 +8,9 @@ const Main: React.FC = () => {
   
   return (
     <div>
+    <section>
+      <FakeHeader />
+    </section>
       <Header />
       <h1>Main</h1>
       <section>
