@@ -1,12 +1,14 @@
 // pages/cart/Cart.tsx
 import Header from '../../components/header/Header';
+import { CartItems } from './components/CartItems';
 
 const Cart: React.FC = () => {
   return (
-    <div>
+    <>
       <Header />
-      <h1>Cart</h1>
-    </div>
+      <h2>Cart</h2>
+      <CartItems />
+    </>
   );
 };
 
