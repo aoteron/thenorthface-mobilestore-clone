@@ -9,13 +9,14 @@ type ProductCount = {
 
 export function CartItems() {
   const { user } = useUsersContext();
+  console.log({ user })
   const { cartItems } = useCartContext();
   const [totalPrize, setTotalPrize] = useState(0);
 
   const calculateTotalPrize = () => {
     let prize: number = 0;
-    cartItems.forEach((item) => {
-      const product = user.cart.find((cartItem) => cartItem.id === item.id);
+    cartItems?.forEach((item) => {
+      const product = user?.cart.find((cartItem) => cartItem.id === item.id);
       if (product) {
         prize += item.variations[0].prize;
       }
@@ -24,23 +25,27 @@ export function CartItems() {
   };
 
   const productCount: ProductCount = {};
-  user.cart.forEach((item) => {
+  user?.cart.forEach((item) => {
     const productId: string = item.id;
     productCount[productId] = productCount[productId]
       ? productCount[productId] + 1
       : 1;
   });
 
+  console.log(productCount)
+
   useEffect(() => {
     calculateTotalPrize();
-  }, [user.cart, cartItems]);
+  }, [user?.cart, cartItems]);
+
+  // const product count
 
   return (
     <>
-      {user.cart.length === 0 && (
+      {user?.cart.length === undefined && (
         <h3>The cart is empty! 😢</h3>
       )}
-      {Object.entries(productCount).map(([productId, count]) => {
+      {Object.entries(productCount)?.map(([productId, count]) => {
         const product = cartItems.find((cartItem) => cartItem.id === productId);
         return (
           <div key={productId}>
@@ -52,7 +57,7 @@ export function CartItems() {
           </div>
         );
       })}
-      {user.cart.length > 0 && (
+      {user?.cart.length > 0 && (
         <div>
           <p>Total:</p>
           <p>{totalPrize} €</p>

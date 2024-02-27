@@ -1,0 +1,55 @@
+@import 'src/index.css';
+
+.headerXPLR {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 393px;
+    height: 110px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    vertical-align: bottom;
+    text-transform: uppercase;
+    padding-inline-start: 4px;
+    padding-inline-end: 4px;
+}
+
+.headerXPLR p {
+    font-size: 1.4rem;
+}
+
+.headerXPLR a {
+    color: var(--secondary-color);
+    transition: color 0.2s ease;
+}
+
+.headerXPLR a:hover {
+    color: var(--tertiary-color);
+}
+
+/* header */
+
+.navbar {
+    width: 393px;
+    height: 110px;
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-container img {
+    margin-right: 1px;
+    width: 29.02px;
+    height: 28px;
+  }
+
+  .icon-container__logo img {
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 20%;
+  }

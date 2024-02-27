@@ -17,19 +17,6 @@ async function getUserData() {
   }
 }
 
-// interface LoginFormProps {
-//   onSubmit: (formData: { username: string; password: string }) => void; 
-// }
-
-// const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
-//   const [username, setUsername] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault(); 
-//     onSubmit({ username, password }); 
-//   };
-
   export function Login() {
     const userCtxt = useUsersContext();
     const [users, setUsers] = useState([] as User[]);
@@ -104,7 +91,6 @@ async function getUserData() {
           </div>
 
           <div>
-            {/* Botón de enviar el formulario */}
             <button type="submit">LOG IN</button>
             <br></br>
             <button type="submit">SIGN UP</button>

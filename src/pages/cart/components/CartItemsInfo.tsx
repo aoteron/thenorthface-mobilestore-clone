@@ -43,7 +43,7 @@ function CartItemInfo({ product, variation, count, renderPrice }: Props) {
 
   return (
     <>
-      {product && ( // Verifica si product no es undefined antes de renderizar
+      {product && (
         <div key={product.id}>
           <div>
             <h4>{product.name}</h4>

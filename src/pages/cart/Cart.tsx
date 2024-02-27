@@ -6,14 +6,12 @@ import { CartItems } from './components/CartItems';
 const Cart: React.FC = () => {
   return (
     <>
-    <div>
     <section>
       <FakeHeader />
     </section>
       <Header />
       <h2>Cart</h2>
       <CartItems />
-    </div>
     </>
   );
 };

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Mohave');
+
+* {
+    font-family: 'Mohave', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+:root {
+    --primary-color: #000000; 
+    --secondary-color: #FFFFFF;
+    --tertiary-color: #898989;
+    --purchase-color: #AA0000;
+}
