@@ -1,5 +1,5 @@
 // Header.tsx
-import './header.css';
+// import './header.css';
 import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/icons/search-sharp.svg';
 import cartIcon from '../../assets/icons/cart-sharp.svg';
@@ -12,9 +12,9 @@ type HeaderProps = NonNullable<unknown>;
 export function Header({}: HeaderProps) {
   return (
     <div>
-      <section className='headerXPLR'>
-        <p>
-          <a href='#'>Join XPLR PASS</a> and enjoy a 10% discount on your first <br />purchase
+      <section className="bg-black text-white w-393 h-110 flex items-end justify-center text-center align-bottom uppercase px-4">
+        <p className="text-lg">
+          <a href='#' className='transition-colors duration-200 ease-in-out'>Join XPLR PASS</a> and enjoy a 10% discount on your first <br />purchase
         </p>
       </section>
 
