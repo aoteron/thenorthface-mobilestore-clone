@@ -8,6 +8,12 @@ export default {
         secondary: '#FFFFFF',
         tertiary: '#898989',
         purchase: '#AA0000',
+      },
+      fontSize: {
+        'x12': '1.2rem',
+        'x14': '1.4rem',
+        'x16': '1.6rem',
+        'x18': '1.8rem',
       },},
   },
   plugins: [],
