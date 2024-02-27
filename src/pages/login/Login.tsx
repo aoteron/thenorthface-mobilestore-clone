@@ -7,7 +7,7 @@ import { useUsersContext } from '../../components/contexts/UserContext.tsx';
 // import Header from '../../components/header/Header.tsx'
 import FakeHeader from '../../components/header/FakeHeader.tsx';
 
-async function getUserData() {
+async function fetchUserData() {
   try {
     const data = await fetch('src/data/users.json');
     const JSONdata = await data.json();
@@ -26,7 +26,7 @@ async function getUserData() {
 
   useEffect (() => {
     async function dataUsers() {
-    const allUsersData = await getUserData();
+    const allUsersData = await fetchUserData();
     setUsers(allUsersData);
     }
     dataUsers();

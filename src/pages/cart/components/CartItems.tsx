@@ -43,7 +43,7 @@ export function CartItems() {
   return (
     <>
       {user?.cart.length === undefined && (
-        <h3>The cart is empty! 😢</h3>
+        <h3>You have not added any product into the cart</h3>
       )}
       {Object.entries(productCount)?.map(([productId, count]) => {
         const product = cartItems.find((cartItem) => cartItem.id === productId);

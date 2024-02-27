@@ -1,7 +1,7 @@
 import { useAuthState } from "../contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({
+const PrivateRoute = ({
   component: Component,
 }: {
   component: React.ElementType;
@@ -10,4 +10,4 @@ const ProtectedRoute = ({
   return isAuthenticated ? <Component /> : <Navigate to="/" />;
 };
 
-export default ProtectedRoute;
+export default PrivateRoute;

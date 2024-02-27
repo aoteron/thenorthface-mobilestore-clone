@@ -4,7 +4,7 @@ import Main from '../../pages/main/Main';
 import Product from '../../pages/product/Product';
 import ProductDetails from "../../pages/product/Product";
 import Cart from "../../pages/cart/Cart";
-// import ProtectedRoute from "./ProtectedRoutes";
+// import PrivateRoute from "./PrivateRoutes";
 import { AuthProvider } from "../contexts/AuthContext";
 
 const AppRoutes = () => {

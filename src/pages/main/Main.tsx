@@ -15,7 +15,6 @@ const Main: React.FC = () => {
       <h1>Main</h1>
       <section>
         {products.map(product => {
-          // Obtén la primera variante del producto
           const firstVariation = product.variations[0];
 
           return (
