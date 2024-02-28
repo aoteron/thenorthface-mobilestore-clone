@@ -104,12 +104,12 @@ async function fetchUserData() {
               />
             <p className='mt-4 underline text-x16 hover:text-tertiary transition-colors duration-200 ease-in cursor-pointer pl-1'>Forgot password?</p>
             </div>
-          </form>
 
             <div className='flex flex-col mt-4'>
               <button className='bg-primary text-secondary text-x18 font-semibold hover:text-tertiary transition-colors duration-200 ease-in cursor-pointer p-2 ' type="submit">LOG IN</button>
               <button className='bg-primary text-secondary text-x18 font-semibold hover:text-tertiary transition-colors duration-200 ease-in cursor-pointer p-2 mt-2'type="submit">SIGN UP</button>
             </div>
+          </form>
       </div>
     </section>
     </div>
