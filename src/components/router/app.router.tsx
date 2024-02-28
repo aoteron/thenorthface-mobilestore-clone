@@ -8,7 +8,7 @@ import Cart from "../../pages/cart/Cart";
 import { AuthProvider } from "../contexts/AuthContext";
 
 const AppRoutes = () => {
-    return (    
+    return (
         <AuthProvider>
             <BrowserRouter>
                 <Routes>

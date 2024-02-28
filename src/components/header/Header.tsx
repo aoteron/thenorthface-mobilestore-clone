@@ -11,17 +11,17 @@ type HeaderProps = NonNullable<unknown>;
 export function Header({}: HeaderProps) {
   return (
     <div className='flex items-center flex-col'>
-      <section style={{ width: '393px', height: '110px' }} className="bg-primary text-secondary flex items-end justify-center text-center align-bottom uppercase px-4">
+      <section style={{ width: '393px', height: '85px' }} className="bg-primary text-secondary flex items-end justify-center text-center align-bottom uppercase px-4">
         <p className="text-lg">
           <a href='#' className=' underline hover:text-tertiary transition-colors duration-200 ease-in-out'>Join XPLR PASS</a> and enjoy a 10% discount on your first <br />purchase
         </p>
       </section>
 
-      <header style={{ width: '393px', maxHeight: '60px', paddingLeft: '4px', paddingRight: '4px' }} className='shadow-md'>
+      <header style={{ width: '393px', maxHeight: '60px'}} className='shadow-md'>
         <div className='bg-secondary flex items-center justify-between'>
           <Link to="/">
           <div>
-            <img src={menuSharp} style={{ width: '26px' }}/>
+            <img src={menuSharp} style={{ width: '26px' }} className='ml-4'/>
           </div>
           </Link>
           <Link to="/">
@@ -30,11 +30,11 @@ export function Header({}: HeaderProps) {
           </div>
           </Link>  
           <div className='flex'>
-            <Link to="cart">
+            <Link to="/main">
             <img src={searchIcon} style={{ width: '29px' }} alt="Search Icon" />
             </Link>
             <Link to="/cart">
-            <img src={cartIcon} style={{ width: '29px'}} alt="Carrito" />
+            <img src={cartIcon} style={{ width: '29px'}} className='mr-4' alt="Carrito" />
             </Link>
           </div>
         </div>
