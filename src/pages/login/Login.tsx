@@ -69,17 +69,17 @@ async function fetchUserData() {
     
 
     <section className='flex justify-center'>
-      <div style={{ width: '361px', height: '78px' }} className='bg-primary flex flex-col items-center justify-center mt-10 text-secondary'>
+      <div style={{ width: '361px', height: '78px' }} className='bg-primary flex flex-col items-center justify-center mt-6 text-secondary'>
       <img src={XPLRLogo} style={{ width: '80px' }} alt="XPLR Logo" />
       <p className='underline hover:text-tertiary transition-colors duration-200 ease-in cursor-pointer text-lg mt-1'>Create an account</p>
       </div>
     </section>
 
-    <section className='flex justify-center mt-8' id='LOGIN'>
+    <section className='flex justify-center mt-4' id='LOGIN'>
       <div style={{ width: '361px', height: '530px' }} className='border border-primary p-10 bg-secondary bg-opacity-60 flex flex-col justify-between'>
 
-        <h3 className='flex justify-center text-x18 font-semibold tracking-tighter pt--4'>LOG IN TO YOUR ACCOUNT</h3>
-          <p className='text-x16 mt-6'>Sign in to view your orders, request a return, and more. And if you are also a member of the XPLR Pass loyalty program, you can enjoy a lot of exclusive benefits.
+        <h3 className='flex justify-center text-x18 font-semibold tracking-tighter'>LOG IN TO YOUR ACCOUNT</h3>
+          <p className='text-x16'>Sign in to view your orders, request a return, and more. And if you are also a member of the XPLR Pass loyalty program, you can enjoy a lot of exclusive benefits.
           </p>
 
           <p className='text-x14 font-bold'>Haven't you suscribed to XPLR Pass yet? <br></br>
@@ -107,7 +107,7 @@ async function fetchUserData() {
 
             <div className='flex flex-col mt-4'>
               <button className='bg-primary text-secondary text-x18 font-semibold hover:text-tertiary transition-colors duration-200 ease-in cursor-pointer p-2 ' type="submit">LOG IN</button>
-              <button className='bg-primary text-secondary text-x18 font-semibold hover:text-tertiary transition-colors duration-200 ease-in cursor-pointer p-2 mt-2'type="submit">SIGN UP</button>
+              <button className='bg-primary text-secondary text-x18 font-semibold hover:text-tertiary transition-colors duration-200 ease-in cursor-pointer p-2 mt-4'type="submit">SIGN UP</button>
             </div>
           </form>
       </div>

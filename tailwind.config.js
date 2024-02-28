@@ -14,7 +14,8 @@ export default {
         'x14': '1.4rem',
         'x16': '1.6rem',
         'x18': '1.8rem',
-      },},
+      },
+    },
   },
   plugins: [],
 }
