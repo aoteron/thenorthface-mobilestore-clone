@@ -60,8 +60,8 @@ async function fetchUserData() {
 
     <div className='relative'>
       <div className='absolute inset-0 z-0'>
-    <div className="flex justify-center items-center">
-        <img src={BgGIF} alt='Fondo GIF' className='object-cover' style={{ width: '393px', height: '682px' }}/>
+    <div className="flex items-center">
+        <img src={BgGIF} alt='Fondo GIF' className='' style={{ width: '393px', height: '670px' }}/>
       </div>
     </div>
     </div>
@@ -69,7 +69,7 @@ async function fetchUserData() {
     
 
     <section className='flex justify-center'>
-      <div style={{ width: '361px', height: '78px' }} className='bg-primary flex flex-col items-center justify-center mt-6 text-secondary'>
+      <div style={{ width: '361px', height: '78px' }} className='bg-primary flex flex-col items-center justify-center mt-10 text-secondary'>
       <img src={XPLRLogo} style={{ width: '80px' }} alt="XPLR Logo" />
       <p className='underline hover:text-tertiary transition-colors duration-200 ease-in cursor-pointer text-lg mt-1'>Create an account</p>
       </div>

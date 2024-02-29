@@ -31,7 +31,7 @@ const ProductDetails: React.FC = () => {
     <div>
 
       <Header />
-      <div className='pl-10 pr-10 mt-8'>
+      <div className='pl-10 pr-10 mt-4'>
         <div className='flex flex-row text-x14 text-tertiary'>
         <Link to={'/main'}>
           <p className='text-tertiary hover:text-primary'>{'/'}  ACTIVIDAD</p>
@@ -55,7 +55,7 @@ const ProductDetails: React.FC = () => {
         </div>
         <div className='flex flex-col items-center'>
           <AddToCartButton product={product} />
-          <p className='mb-14'>Envíos y devoluciones gratis</p>
+          <p className='mt-6 mb-12 text-tertiary'>Envíos y devoluciones gratis</p>
         </div>
       </div>
     </div>
