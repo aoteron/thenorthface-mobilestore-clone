@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthDispatch } from '../../components/contexts/AuthContext.tsx';
 import { useNavigate } from 'react-router-dom';
-import { User } from '../../data/usersData.ts';
+import { User } from '../../data/usersTypes.ts';
 import { useUsersContext } from '../../components/contexts/UserContext.tsx';
 import Header from '../../components/header/Header.tsx'
 import XPLRLogo from '../../assets/icons/xplr-pass-logo.svg'

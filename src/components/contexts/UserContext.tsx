@@ -1,7 +1,7 @@
 // UserContext.tsx
 import { createContext, useState, useContext } from "react";
 import { Outlet } from "react-router-dom";
-import { User } from "../../data/usersData";
+import { User } from "../../data/usersTypes";
 
 export interface UserContextType {
   user: User;

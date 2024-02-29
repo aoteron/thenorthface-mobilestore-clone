@@ -6,7 +6,6 @@ const Cart: React.FC = () => {
   return (
     <>
       <Header />
-      <h2>Cart</h2>
       <CartItems />
     </>
   );

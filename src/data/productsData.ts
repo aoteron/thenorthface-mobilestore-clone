@@ -14,7 +14,7 @@ export interface Product {
 export interface ProductVariation {
   id: string;
   color: string;
-  prize: number;
+  price: number;
   image: string;
 }
 
@@ -34,7 +34,7 @@ export const products: Product[] = [
       {
         id: "1",
         color: "Forest Olive-TNF Black",
-        prize: 115.00,
+        price: 115.00,
         image: "https://images.thenorthface.com/is/image/TheNorthFaceEU/CG55_RMO_hero"
       }
     ]
@@ -53,25 +53,25 @@ export const products: Product[] = [
       {
         id: "1",
         color: "Indigo Stone",
-        prize: 190.00,
+        price: 190.00,
         image: "/src/assets/products/85AG_POD_hero.jpeg"
       },
       {
         id: "2",
         color: "TNF Black",
-        prize: 190.00,
+        price: 190.00,
         image: "src/assets/products/85AG_JK3_hero.jpeg"
       },
       {
         id: "3",
         color: "Dark Sage-Pine Needle",
-        prize: 95.00,
+        price: 95.00,
         image: "src/assets/products/85AG_ONQ_hero.jpeg"
       },
       {
         id: "4",
         color: "Boysenberry-Rose Quart",
-        prize: 95.00,
+        price: 95.00,
         image: "/src/assets/products/85AG_OWU_hero.jpeg"
       }
     ]
@@ -91,7 +91,7 @@ export const products: Product[] = [
       {
         id: "1",
         color: "Negro",
-        prize: 170.00,
+        price: 170.00,
         image: "https://images.thenorthface.com/is/image/TheNorthFaceEU/83ND_MN8_hero"
       }
     ]
@@ -111,7 +111,7 @@ export const products: Product[] = [
       {
         id: "1",
         color: "Negro",
-        prize: 125.00,
+        price: 125.00,
         image: "https://images.thenorthface.com/is/image/TheNorthFaceEU/52SE_R81_hero"
       }
     ]

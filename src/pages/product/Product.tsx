@@ -40,7 +40,7 @@ const ProductDetails: React.FC = () => {
         </div>
         <h2 className='text-x16'>{product.name}</h2>
         <p className='text-x14 font-light tracking-tight uppercase text-tertiary mt-4 mb-4'>Escribe la primera opinión</p>
-        <p className='text-x16 mt-4'>€ {firstVariation.prize}</p>
+        <p className='text-x16 mt-4'>€ {firstVariation.price}</p>
 
         <div>
           <img

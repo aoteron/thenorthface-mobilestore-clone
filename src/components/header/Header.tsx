@@ -12,9 +12,12 @@ export function Header({}: HeaderProps) {
   return (
     <div className='flex items-center flex-col'>
       <section style={{ width: '393px', height: '50px' }} className="bg-primary text-secondary flex items-end justify-center text-center align-bottom uppercase px-4">
+
+      <Link to="/">
         <p className="text-lg">
-          <a href='#' className=' underline hover:text-tertiary transition-colors duration-200 ease-in-out'>Join XPLR PASS</a> and enjoy a 10% discount on your first <br />purchase
+          <a className='underline hover:text-tertiary transition-colors duration-200 ease-in-out'>Join XPLR PASS</a> and enjoy a 10% discount on your first <br />purchase
         </p>
+      </Link>
       </section>
 
       <header style={{ width: '393px', maxHeight: '60px'}} className='shadow-md'>
@@ -24,7 +27,7 @@ export function Header({}: HeaderProps) {
             <img src={menuSharp} style={{ width: '26px' }} className='ml-4'/>
           </div>
           </Link>
-          <Link to="/">
+          <Link to="/main">
           <div className='pl-12'>
             <img src={northFaceLogo} alt="The North Face Logo" style={{ width: '83px' }} />
           </div>

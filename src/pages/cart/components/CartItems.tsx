@@ -5,6 +5,20 @@ import { products as productsData } from "../../../data/productsData";
 import Bin from "../../../assets/icons/trash-bin-sharp.svg" 
 import Add from "../../../assets/icons/add-circle-sharp.svg"
 import Remove from "../../../assets/icons/remove-circle-sharp.svg"
+import { products } from '../../../data/productsData';
+import { Link } from "react-router-dom";
+import XPLRLogo from '../../../assets/icons/xplr-pass-logo.svg'
+
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Pagination } from 'swiper/modules';
 
 type ProductCount = {
   [productId: string]: number;
@@ -16,18 +30,19 @@ export function CartItems() {
           decreaseCartQuantity,
           removeFromCart } = useShoppingCart();
 
-  const [totalPrize, setTotalPrize] = useState(0);
+  const [totalprice, setTotalprice] = useState(0);
 
-  const calculateTotalPrize = () => {
-    let prize: number = 0;
+  const calculateTotalprice = () => {
+    let price: number = 0;
     cartItems?.forEach((item) => {
       const product = productsData.find((productItem) => productItem.id === item.id);
       if (product) {
-        prize += item.variations[0].prize * item.quantity;
+        price += item.variations[0].price * item.quantity;
       }
     });
-    setTotalPrize(prize);
+    setTotalprice(price);
   };
+
   const AddToCartButton: React.FC<{ product: Product }> = ({ product }) => {
     const { increaseCartQuantity } = useShoppingCart();
     const handleAddToCart = () => {
@@ -67,13 +82,70 @@ export function CartItems() {
   });
 
   useEffect(() => {
-    calculateTotalPrize();
+    calculateTotalprice();
   }, [cartItems]);
 
   return (
     <>
       {cartItems?.length === 0 && (
-        <><h3>El carrito está vacío</h3></>
+        <>
+          <div className='flex flex-col items-center mt-14'>
+            <h3 className="text-x14 mb-4">¡Ups! El carrito está vacío</h3>
+          </div>
+
+          <div className="flex flex-col items-center">
+          <Link to={'/main'}>
+          <button className='bg-purchase text-secondary text-x16 font-semibold hover:text-secondary hover:bg-primary transition-colors duration-200 ease-in cursor-pointer uppercase p-2 pl-6 pr-6 mb-12'>VE A NUESTRA COLECCIÓN</button>
+          </Link>
+          </div>
+
+          <Swiper
+          slidesPerView={2}
+          centeredSlides={true}
+          spaceBetween={5}
+          grabCursor={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className=""
+          >
+        {products.map(product => {
+          const firstVariation = product.variations[0];
+      
+          return (
+            <SwiperSlide key={product.id} className="flex flex-col items-center">
+              <img
+                src={firstVariation.image}
+                alt={`Imagen de la categoría ${product.category}`}
+              />
+              <Link to={`/product/${product.id}`}>
+                <h3 className='mt-6 mb-14 uppercase text-lg underline font-semibold hover:text-tertiary transition-colors duration-200 ease-in-out'>{product.category}</h3>
+              </Link>
+            </SwiperSlide>
+          );
+        })}
+          </Swiper>
+
+          <div className="flex flex-col items-center">
+
+           <section className=''>
+            <div style={{ width: '361px', height: '78px' }} className='bg-primary flex flex-col items-center justify-center mt-4 text-secondary'>
+              <img src={XPLRLogo} style={{ width: '80px' }} alt="XPLR Logo" />
+              <Link to={'/'}>
+              <p className='underline hover:text-tertiary transition-colors duration-200 ease-in text-lg mt-1'>Create an account</p>
+              </Link>
+            </div>
+           </section>
+
+           <div className='flex flex-col items-center mt-10 text-tertiary'>
+           <Link to={'/'}>
+            <h3 className="text-x14 hover:text-primary transition-colors duration-200 ease-in">¿Ya tienes una cuenta? Inicia sesión</h3>
+           </Link>
+          </div>
+
+        </div>
+        </>
       )}
       {Object.entries(productCount).map(([productId, count]) => {
         const product = productsData.find((productItem) => productItem.id === productId);
@@ -81,9 +153,10 @@ export function CartItems() {
           <div key={productId}>
           {product && (
             <>
+            <div className='pl-10 pr-10 mt-10'>
               <CartItemInfo
-                image= {product.variations[0].image}
-                renderPrice={calculateTotalPrize}
+                image={product.variations[0].image}
+                renderPrice={calculateTotalprice}
                 product={product}
                 quantity={cartItems.find((cartItem) => cartItem.id === parseInt(productId))?.quantity || 0}
               />
@@ -92,15 +165,16 @@ export function CartItems() {
                 <TakeFromCartButton product={product} />
                 <RemoveFromCartButton product={product} />
               </div>
+              </div>
             </>
           )}
         </div>
       );
     })}
       {cartItems?.length > 0 && (
-        <div>
+        <div className='text-x14 pl-10 pr-10'>
           <p>Total:</p>
-          <p>{totalPrize} €</p>
+          <p>{totalprice} €</p>
         </div>
       )}
     </>
