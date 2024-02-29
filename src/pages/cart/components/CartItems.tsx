@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useShoppingCart } from "../../../components/contexts/CartContext";
 import CartItemInfo from "./CartItemsInfo";
-import { products as productsData } from "../../../data/productsData"; 
+import { products as productsData } from "../../../data/productsData";
+import Bin from "../../../assets/icons/trash-bin-sharp.svg" 
+import Add from "../../../assets/icons/add-circle-sharp.svg"
+import Remove from "../../../assets/icons/remove-circle-sharp.svg"
 
 type ProductCount = {
   [productId: string]: number;
@@ -32,7 +35,7 @@ export function CartItems() {
     };
     
     return (
-      <button onClick={handleAddToCart}>+</button>
+      <button onClick={handleAddToCart}><img src={Add} alt='Añade un producto' style={{ width:'20px' }} /><span className='text-transparent'>+</span></button>
     );}
   
   const TakeFromCartButton: React.FC<{ product: Product }> = ({ product }) => {
@@ -42,7 +45,7 @@ export function CartItems() {
       };
       
       return (
-        <button onClick={handleTakeFromCart}>-</button>
+        <button onClick={handleTakeFromCart}><img src={Remove} alt='Elimina un producto'  style={{ width:'20px' }} /><span className='text-transparent'>-</span></button>
       );}
 
   const RemoveFromCartButton: React.FC<{ product: Product }> = ({ product }) => {
@@ -52,7 +55,7 @@ export function CartItems() {
         };
         
         return (
-          <button onClick={handleRemoveFromCart}>Remove</button>
+          <button onClick={handleRemoveFromCart}><img src={Bin} alt='Elimina el producto' style={{ width:'20px' }}/><span className='text-transparent'>x</span></button>
         );}
 
   const productCount: ProductCount = {};
@@ -70,7 +73,7 @@ export function CartItems() {
   return (
     <>
       {cartItems?.length === 0 && (
-        <h3>You have not added any product into the cart</h3>
+        <><h3>El carrito está vacío</h3></>
       )}
       {Object.entries(productCount).map(([productId, count]) => {
         const product = productsData.find((productItem) => productItem.id === productId);
