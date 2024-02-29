@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useShoppingCart } from "../../../components/contexts/CartContext";
 import CartItemInfo from "./CartItemsInfo";
 import { products as productsData } from "../../../data/productsData";
@@ -8,7 +7,6 @@ import Remove from "../../../assets/icons/remove-circle-sharp.svg"
 import { products } from '../../../data/productsData';
 import { Link } from "react-router-dom";
 import XPLRLogo from '../../../assets/icons/xplr-pass-logo.svg'
-
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -28,20 +26,8 @@ export function CartItems() {
   const { cartItems,
           increaseCartQuantity,
           decreaseCartQuantity,
-          removeFromCart } = useShoppingCart();
-
-  const [totalprice, setTotalprice] = useState(0);
-
-  const calculateTotalprice = () => {
-    let price: number = 0;
-    cartItems?.forEach((item) => {
-      const product = productsData.find((productItem) => productItem.id === item.id);
-      if (product) {
-        price += item.variations[0].price * item.quantity;
-      }
-    });
-    setTotalprice(price);
-  };
+          removeFromCart,
+          totalPrice } = useShoppingCart();
 
   const AddToCartButton: React.FC<{ product: Product }> = ({ product }) => {
     const { increaseCartQuantity } = useShoppingCart();
@@ -80,10 +66,6 @@ export function CartItems() {
       ? productCount[productId] + 1
       : 1;
   });
-
-  useEffect(() => {
-    calculateTotalprice();
-  }, [cartItems]);
 
   return (
     <>
@@ -147,7 +129,7 @@ export function CartItems() {
         </div>
         </>
       )}
-      {Object.entries(productCount).map(([productId, count]) => {
+      {Object.entries(productCount).map(([productId]) => {
         const product = productsData.find((productItem) => productItem.id === productId);
         return (
           <div key={productId}>
@@ -156,7 +138,7 @@ export function CartItems() {
             <div className='pl-10 pr-10 mt-10'>
               <CartItemInfo
                 image={product.variations[0].image}
-                renderPrice={calculateTotalprice}
+                renderPrice={totalPrice}
                 product={product}
                 quantity={cartItems.find((cartItem) => cartItem.id === parseInt(productId))?.quantity || 0}
               />
@@ -174,7 +156,7 @@ export function CartItems() {
       {cartItems?.length > 0 && (
         <div className='text-x14 pl-10 pr-10'>
           <p>Total:</p>
-          <p>{totalprice} €</p>
+          <p>{totalPrice} €</p>
         </div>
       )}
     </>
