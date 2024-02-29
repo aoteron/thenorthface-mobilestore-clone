@@ -1,15 +1,28 @@
 import Header from '../../components/header/Header';
 import { useParams, Link } from 'react-router-dom';
 import { products, Product } from '../../data/productsData';
-import { useCartContext } from '../../components/contexts/CartContext';
-import FakeHeader from '../../components/header/FakeHeader';
+import { useShoppingCart} from '../../components/contexts/CartContext';
 
 const ProductDetails: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
   const product: Product | undefined = products.find((p: Product) => p.id === productId);
+  console.log("hey===>", productId);
+
+  const AddToCartButton: React.FC<{ product: Product }> = ({ product }) => {
+    const { increaseCartQuantity } = useShoppingCart();
+    
+    const handleAddToCart = () => {
+      increaseCartQuantity(parseInt(product.id));
+    };
+    
+    return (
+      <button onClick={handleAddToCart} className='bg-purchase text-secondary text-x16 font-semibold hover:bg-primary transition-colors duration-200 ease-in cursor-pointer uppercase mt-6 p-3 pl-6 pr-6 mb-2'>Añadir al carrito</button>
+    );
+  };
+  
 
   if (!product) {
-    return <><section><FakeHeader /></section><div>Producto no encontrado</div></>;
+    return <div>Producto no encontrado</div>;
   }
 
   const firstVariation = product.variations[0];
@@ -50,15 +63,3 @@ const ProductDetails: React.FC = () => {
 }
 
 export default ProductDetails;
-
-const AddToCartButton: React.FC<{ product: Product }> = ({ product }) => {
-  const { addToCart } = useCartContext();
-
-  const handleAddToCart = () => {
-    addToCart(product);
-  };
-
-  return (
-    <button onClick={handleAddToCart} className='bg-purchase text-secondary text-x16 font-semibold hover:bg-primary transition-colors duration-200 ease-in cursor-pointer uppercase mt-6 p-3 pl-6 pr-6 mb-2'>Añadir al carrito</button>
-  );
-};

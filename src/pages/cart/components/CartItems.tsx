@@ -1,63 +1,100 @@
-import { useEffect, useState } from "react";
-import { useUsersContext } from "../../../components/contexts/UserContext";
-import { useCartContext } from "../../../components/contexts/CartContext";
+import React, { useEffect, useState } from "react";
+import { useShoppingCart } from "../../../components/contexts/CartContext";
 import CartItemInfo from "./CartItemsInfo";
+import { products as productsData } from "../../../data/productsData"; 
 
 type ProductCount = {
   [productId: string]: number;
 };
 
 export function CartItems() {
-  const { user } = useUsersContext();
-  console.log({ user })
-  const { cartItems } = useCartContext();
+  const { cartItems,
+          increaseCartQuantity,
+          decreaseCartQuantity,
+          removeFromCart } = useShoppingCart();
+
   const [totalPrize, setTotalPrize] = useState(0);
 
   const calculateTotalPrize = () => {
     let prize: number = 0;
     cartItems?.forEach((item) => {
-      const product = user?.cart.find((cartItem) => cartItem.id === item.id);
+      const product = productsData.find((productItem) => productItem.id === item.id);
       if (product) {
-        prize += item.variations[0].prize;
+        prize += item.variations[0].prize * item.quantity;
       }
     });
     setTotalPrize(prize);
   };
+  const AddToCartButton: React.FC<{ product: Product }> = ({ product }) => {
+    const { increaseCartQuantity } = useShoppingCart();
+    const handleAddToCart = () => {
+      increaseCartQuantity(parseInt(product.id));
+    };
+    
+    return (
+      <button onClick={handleAddToCart}>+</button>
+    );}
+  
+  const TakeFromCartButton: React.FC<{ product: Product }> = ({ product }) => {
+      const { decreaseCartQuantity } = useShoppingCart();
+      const handleTakeFromCart = () => {
+        decreaseCartQuantity(parseInt(product.id));
+      };
+      
+      return (
+        <button onClick={handleTakeFromCart}>-</button>
+      );}
+
+  const RemoveFromCartButton: React.FC<{ product: Product }> = ({ product }) => {
+        const { removeFromCart } = useShoppingCart();
+        const handleRemoveFromCart = () => {
+          removeFromCart(parseInt(product.id));
+        };
+        
+        return (
+          <button onClick={handleRemoveFromCart}>Remove</button>
+        );}
 
   const productCount: ProductCount = {};
-  user?.cart.forEach((item) => {
-    const productId: string = item.id;
+  cartItems?.forEach((item) => {
+    const productId: string = item.id.toString();
     productCount[productId] = productCount[productId]
       ? productCount[productId] + 1
       : 1;
   });
 
-  console.log(productCount)
-
   useEffect(() => {
     calculateTotalPrize();
-  }, [user?.cart, cartItems]);
-
-  // const product count
+  }, [cartItems]);
 
   return (
     <>
-      {user?.cart.length === undefined && (
+      {cartItems?.length === 0 && (
         <h3>You have not added any product into the cart</h3>
       )}
-      {Object.entries(productCount)?.map(([productId, count]) => {
-        const product = cartItems.find((cartItem) => cartItem.id === productId);
+      {Object.entries(productCount).map(([productId, count]) => {
+        const product = productsData.find((productItem) => productItem.id === productId);
         return (
           <div key={productId}>
-            <CartItemInfo
-              renderPrice={calculateTotalPrize}
-              product={product}
-              count={count}
-            />
-          </div>
-        );
-      })}
-      {user?.cart.length > 0 && (
+          {product && (
+            <>
+              <CartItemInfo
+                image= {product.variations[0].image}
+                renderPrice={calculateTotalPrize}
+                product={product}
+                quantity={cartItems.find((cartItem) => cartItem.id === parseInt(productId))?.quantity || 0}
+              />
+              <div>
+                <AddToCartButton product={product} />
+                <TakeFromCartButton product={product} />
+                <RemoveFromCartButton product={product} />
+              </div>
+            </>
+          )}
+        </div>
+      );
+    })}
+      {cartItems?.length > 0 && (
         <div>
           <p>Total:</p>
           <p>{totalPrize} €</p>

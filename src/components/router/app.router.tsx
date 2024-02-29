@@ -6,9 +6,12 @@ import ProductDetails from "../../pages/product/Product";
 import Cart from "../../pages/cart/Cart";
 // import PrivateRoute from "./PrivateRoutes";
 import { AuthProvider } from "../contexts/AuthContext";
+import { ShoppingCartProvider } from '../../components/contexts/CartContext';
+
 
 const AppRoutes = () => {
     return (
+        <ShoppingCartProvider>
         <AuthProvider>
             <BrowserRouter>
                 <Routes>
@@ -35,6 +38,7 @@ const AppRoutes = () => {
                 </Routes>
             </BrowserRouter>
         </AuthProvider>
+        </ShoppingCartProvider>
     );
 };
 
