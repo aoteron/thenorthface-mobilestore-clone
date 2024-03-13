@@ -15,7 +15,7 @@ export function Header({}: HeaderProps) {
 
       <Link to="/">
         <p className="text-lg">
-          <a className='underline hover:text-tertiary transition-colors duration-200 ease-in-out'>Join XPLR PASS</a> and enjoy a 10% discount on your first <br />purchase
+          <a className='underline hover:text-tertiary transition-colors duration-200 ease-in-out'>Únete a XPLR PASS</a> y disfruta de un descuento del 10% <br /> en tu primera compra
         </p>
       </Link>
       </section>
