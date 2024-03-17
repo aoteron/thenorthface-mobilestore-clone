@@ -156,7 +156,7 @@ export function CartItems() {
       {cartItems?.length > 0 && (
         <div className='text-x14 pl-10 pr-10'>
           <p>Total:</p>
-          <p>{totalPrice} €</p>
+          <p>115 €</p>
         </div>
       )}
     </>
