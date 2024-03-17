@@ -16,13 +16,13 @@ const ProductDetails: React.FC = () => {
     };
     
     return (
-      <button onClick={handleAddToCart} className='bg-purchase text-secondary text-x16 font-semibold hover:bg-primary transition-colors duration-200 ease-in cursor-pointer uppercase mt-6 p-3 pl-6 pr-6 mb-2'>Añadir al carrito</button>
+      <button onClick={handleAddToCart} className='bg-purchase text-secondary text-x16 font-semibold hover:bg-primary transition-colors duration-200 ease-in cursor-pointer uppercase mt-6 p-3 pl-6 pr-6 mb-2'>Add to cart</button>
     );
   };
   
 
   if (!product) {
-    return <div>Producto no encontrado</div>;
+    return <div>Product not found</div>;
   }
 
   const firstVariation = product.variations[0];
@@ -34,12 +34,12 @@ const ProductDetails: React.FC = () => {
       <div className='pl-10 pr-10 mt-4'>
         <div className='flex flex-row text-x14 text-tertiary'>
         <Link to={'/main'}>
-          <p className='text-tertiary hover:text-primary'>{'/'}  ACTIVIDAD</p>
+          <p className='text-tertiary hover:text-primary'>{'/'}  ACTIVITY</p>
         </Link>
           <p className='pl-1'> / {product.category}</p>
         </div>
         <h2 className='text-x16'>{product.name}</h2>
-        <p className='text-x14 font-light tracking-tight uppercase text-tertiary mt-4 mb-4'>Escribe la primera opinión</p>
+        <p className='text-x14 font-light tracking-tight uppercase text-tertiary mt-4 mb-4'>Write the first opinion</p>
         <p className='text-x16 mt-4'>€ {firstVariation.price}</p>
 
         <div>
@@ -55,7 +55,7 @@ const ProductDetails: React.FC = () => {
         </div>
         <div className='flex flex-col items-center'>
           <AddToCartButton product={product} />
-          <p className='mt-6 mb-12 text-tertiary'>Envíos y devoluciones gratis</p>
+          <p className='mt-6 mb-12 text-tertiary'>Free shipping and returns</p>
         </div>
       </div>
     </div>

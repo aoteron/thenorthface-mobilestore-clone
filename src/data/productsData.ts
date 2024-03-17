@@ -3,7 +3,7 @@ export interface Product {
   id: string;
   name: string;
   category: string;
-  gender: "Hombre" | "Mujer" | "Unisex";
+  gender: "Male" | "Female" | "Unisex";
   idealUse: string;
   advantages: {
     [key: string]: boolean;
@@ -21,14 +21,14 @@ export interface ProductVariation {
 export const products: Product[] = [
   {
     id: "1",
-    name: "Chaqueta 3 en 1 Evolve II Triclimate® para hombre",
-    category: "Senderismo para hombre",
-    gender: "Hombre",
-    idealUse: "Chaqueta versátil para climas fríos, compuesta por dos capas que pueden usarse juntas o por separado, proporcionando protección contra el viento, la lluvia y el frío.",
+    name: "Evolve II Triclimate® 3-in-1 Jacket for Men",
+    category: "Men's Hiking",
+    gender: "Male",
+    idealUse: "Versatile jacket for cold climates, composed of two layers that can be worn together or separately, providing protection against wind, rain, and cold.",
     advantages: {
-      Versatilidad: true,
-      "Protección contra los elementos": true,
-      "Capas intercambiables": true,
+      Versatility: true,
+      "Protection against the elements": true,
+      "Interchangeable layers": true,
     },
     variations: [
       {
@@ -41,13 +41,13 @@ export const products: Product[] = [
   },
   {
     id: "2",
-    name: "Chaqueta con aislamiento térmico sintético Huila para mujer",
-    category: "Senderismo para mujer",
-    gender: "Mujer",
-    idealUse: "Calidez al instante al hacer senderismo en días fríos y miserables",
+    name: "Huila Synthetic Insulated Jacket for Women",
+    category: "Women's Hiking",
+    gender: "Female",
+    idealUse: "Instant warmth when hiking on cold and miserable days.",
     advantages: {
-      "DWR - Repelente de agua": true,
-      "Aislamiento sintético": true
+      "DWR - Water Repellent": true,
+      "Synthetic Insulation": true
     },
     variations: [
       {
@@ -78,19 +78,19 @@ export const products: Product[] = [
   },
   {
     id: "3",
-    name: "Zapatillas alpinas GORE-TEX® Verto para hombre",
-    category: "Alpinismo",
-    gender: "Hombre",
-    idealUse: "Zapatillas diseñadas para alpinismo y actividades de montaña, ofreciendo protección impermeable y transpirable gracias a la tecnología GORE-TEX®.",
+    name: "GORE-TEX® Verto Alpine Shoes for Men",
+    category: "Mountaineering",
+    gender: "Male",
+    idealUse: "Shoes designed for mountaineering and mountain activities, offering waterproof and breathable protection thanks to GORE-TEX® technology.",
     advantages: {
-      "Protección impermeable": true,
-      "Transpirabilidad": true,
-      "Agarre en terrenos alpinos": true
+      "Waterproof Protection": true,
+      "Breathability": true,
+      "Grip on Alpine Terrain": true
     },
     variations: [
       {
         id: "1",
-        color: "Negro",
+        color: "Black",
         price: 170.00,
         image: "https://images.thenorthface.com/is/image/TheNorthFaceEU/83ND_MN8_hero"
       }
@@ -98,19 +98,19 @@ export const products: Product[] = [
   },
   {
     id: "4",
-    name: "Mochila Borealis",
-    category: "Mochilas",
+    name: "Borealis Backpack",
+    category: "Backpacks",
     gender: "Unisex",
-    idealUse: "Mochila versátil diseñada para el uso diario, viajes y actividades al aire libre, con compartimentos organizativos y panel trasero acolchado para mayor comodidad.",
+    idealUse: "Versatile backpack designed for everyday use, travel, and outdoor activities, with organizational compartments and padded back panel for added comfort.",
     advantages: {
-      "Versatilidad": true,
-      "Comodidad": true,
-      "Organización": true
+      Versatility: true,
+      Comfort: true,
+      Organization: true
     },
     variations: [
       {
         id: "1",
-        color: "Negro",
+        color: "Black",
         price: 125.00,
         image: "https://images.thenorthface.com/is/image/TheNorthFaceEU/52SE_R81_hero"
       }

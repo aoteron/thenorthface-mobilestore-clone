@@ -36,7 +36,7 @@ export function CartItems() {
     };
     
     return (
-      <button onClick={handleAddToCart}><img src={Add} alt='Añade un producto' style={{ width:'20px' }} /><span className='text-transparent'>+</span></button>
+      <button onClick={handleAddToCart}><img src={Add} alt='Add a product' style={{ width:'20px' }} /><span className='text-transparent'>+</span></button>
     );}
   
   const TakeFromCartButton: React.FC<{ product: Product }> = ({ product }) => {
@@ -72,12 +72,12 @@ export function CartItems() {
       {cartItems?.length === 0 && (
         <>
           <div className='flex flex-col items-center mt-14'>
-            <h3 className="text-x14 mb-4">¡Ups! El carrito está vacío</h3>
+            <h3 className="text-x14 mb-4">¡Ups! The cart is empty</h3>
           </div>
 
           <div className="flex flex-col items-center">
           <Link to={'/main'}>
-          <button className='bg-purchase text-secondary text-x16 font-semibold hover:text-secondary hover:bg-primary transition-colors duration-200 ease-in cursor-pointer uppercase p-2 pl-6 pr-6 mb-12'>VE A NUESTRA COLECCIÓN</button>
+          <button className='bg-purchase text-secondary text-x16 font-semibold hover:text-secondary hover:bg-primary transition-colors duration-200 ease-in cursor-pointer uppercase p-2 pl-6 pr-6 mb-12'>GO TO THE NEW COLLECTION</button>
           </Link>
           </div>
 
@@ -99,7 +99,7 @@ export function CartItems() {
             <SwiperSlide key={product.id} className="flex flex-col items-center">
               <img
                 src={firstVariation.image}
-                alt={`Imagen de la categoría ${product.category}`}
+                alt={`Category image ${product.category}`}
               />
               <Link to={`/product/${product.id}`}>
                 <h3 className='mt-6 mb-14 uppercase text-lg underline font-semibold hover:text-tertiary transition-colors duration-200 ease-in-out'>{product.category}</h3>
@@ -122,7 +122,7 @@ export function CartItems() {
 
            <div className='flex flex-col items-center mt-10 text-tertiary'>
            <Link to={'/'}>
-            <h3 className="text-x14 hover:text-primary transition-colors duration-200 ease-in">¿Ya tienes una cuenta? Inicia sesión</h3>
+            <h3 className="text-x14 hover:text-primary transition-colors duration-200 ease-in">¿ALREADY HAVE AN ACCOUNT? Sign up!</h3>
            </Link>
           </div>
 

@@ -23,9 +23,9 @@ const Main: React.FC = () => {
       <div className=''>
         <img src={Ripstop} />
         <section className='flex flex-col items-center mt-6'>
-          <h3 className='flex justify-center text-x18 font-semibold tracking-wide uppercase'>Nueva colección Ripstop Icons</h3>
-          <p className='text-x14 font-light mt-2'>Creatividad y utilidad de la mano desde los 70's</p>
-          <button className='bg-primary text-secondary text-x16 font-semibold uppercase mt-6 p-2 pl-6 pr-6 mb-10'>Categorías populares</button>
+          <h3 className='flex justify-center text-x18 font-semibold tracking-wide uppercase'>RIPSTOP ICONS</h3>
+          <p className='text-x14 font-light mt-2'>Creativity and utility hand in hand since the 70s.</p>
+          <button className='bg-primary text-secondary text-x16 font-semibold uppercase mt-6 p-2 pl-6 pr-6 mb-10'>Popular categories</button>
         </section>
       </div>
 
