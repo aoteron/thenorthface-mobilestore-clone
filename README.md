@@ -1,4 +1,5 @@
-# Project Name
+# The North Face Mobile Store Clone
+Educatives purposes only
 
 ## Description
 
