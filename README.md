@@ -4,9 +4,13 @@
 
 This is my first React project developed during my time at Assembler Institute of Technology. The project draws inspiration from leading brands such as Nike, Adidas, and Puma to create a sleek and intuitive user interface. However, the design primarily follows the rugged yet stylish aesthetic of The North Face brand.
 
-## FIGMA DESIGN
+## Figma Design
 
-## APP SHOWCASE
+![Figma Design](/public/figma-showcase.png)
+
+## APP Showcase
+
+![App Showcase Video](/public/video-showcase.mp4)
 
 
 ## Tools and Technologies Used
