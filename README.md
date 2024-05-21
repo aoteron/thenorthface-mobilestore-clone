@@ -30,11 +30,13 @@ This is my first React project developed during my time at Assembler Institute o
 To run this project locally, follow these steps:
 
 1. Clone the repository:
+
 ```git clone https://github.com/aoteron/thenorthface-mobilestore-clone/```
 
 2. Install dependencies:
 
-````cd project-name```
+```cd project-name```
+
 ```npm install```
 
 3. Start the development server:
