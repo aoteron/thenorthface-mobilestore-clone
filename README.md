@@ -1,30 +1,56 @@
-# React + TypeScript + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This is my first React project developed during my time at Assembler Institute of Technology. The project draws inspiration from leading brands such as Nike, Adidas, and Puma to create a sleek and intuitive user interface. However, the design primarily follows the rugged yet stylish aesthetic of The North Face brand.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## FIGMA DESIGN
 
-## Expanding the ESLint configuration
+## APP SHOWCASE
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Tools and Technologies Used
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. **React Basics:** Utilized concepts like prop drilling, useState, and useEffect hooks to build dynamic components.
+   
+2. **State Management:** Implemented complex functionalities such as managing cart states and user authentication.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. **Dynamic Routing:** Utilized dynamic routing to render product details, enhancing the user experience.
+
+4. **Design with Figma:** Visualized the UI and planned reusable components, ensuring a seamless design process.
+
+5. **Task Management with Clickup:** Stayed organized and efficient, managing tasks effectively and meeting project deadlines.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+git clone https://github.com/your-username/project-name.git
+
+2. Install dependencies:
+
+cd project-name
+npm install
+
+3. Start the development server:
+
+npm start
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your proposed changes.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+Special thanks to Assembler Institute of Technology for the opportunity to work on this project and to the inspiring brands that influenced the design.
+
+## Contact
+
+For inquiries, reach out to [your-email@example.com](mailto:your-email@example.com).
+
+Stay tuned for more updates and exciting projects to come! 🌟
