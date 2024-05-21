@@ -30,16 +30,16 @@ This is my first React project developed during my time at Assembler Institute o
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-git clone https://github.com/your-username/project-name.git
+```git clone https://github.com/aoteron/thenorthface-mobilestore-clone/```
 
 2. Install dependencies:
 
-cd project-name
-npm install
+````cd project-name```
+```npm install```
 
 3. Start the development server:
 
-npm start
+```npm start```
 
 ## Contributing
 
@@ -55,6 +55,6 @@ Special thanks to Assembler Institute of Technology for the opportunity to work 
 
 ## Contact
 
-For inquiries, reach out to [your-email@example.com](mailto:your-email@example.com).
+For inquiries, reach out to [aoteron.developer@gmail.com](mailto:aoteron.developer@gmail.com).
 
 Stay tuned for more updates and exciting projects to come! 🌟
